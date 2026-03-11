@@ -308,7 +308,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
     );
   }
 
-  function HeroCard({ label, value }) {
+  function HeroCard({ label, value }: { label: string; value: string }) {
     return (
       <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
         <p className="text-3xl font-semibold md:text-4xl">{value}</p>
