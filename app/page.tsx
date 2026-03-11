@@ -186,7 +186,7 @@ export default function CarDealershipWebsite() {
     ["testimonials", "Testimonials"],
   ];
 
-  const goToPage = (page) => {
+  const goToPage = (page: string) => {
     setCurrentPage(page);
     setMobileOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
