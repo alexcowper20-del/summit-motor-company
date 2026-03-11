@@ -392,33 +392,25 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           </div>
         </section>
 <section className="border-b border-white/10 bg-black">
-  <div className="mx-auto max-w-7xl px-6 py-4">
+  <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
+    <div className="grid gap-4 sm:grid-cols-3">
 
-    <div className="grid grid-cols-3 text-center">
-
-      <div>
-        <p className="text-lg font-semibold text-white">50+</p>
-        <p className="text-xs text-white/50 uppercase tracking-wider">
-          Vehicles In Stock
-        </p>
+      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <p className="text-2xl font-semibold text-white">50+</p>
+        <p className="mt-2 text-sm text-white/55">Vehicles in stock</p>
       </div>
 
-      <div>
-        <p className="text-lg font-semibold text-white">⭐ 5 Star</p>
-        <p className="text-xs text-white/50 uppercase tracking-wider">
-          Customer Reviews
-        </p>
+      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <p className="text-2xl font-semibold text-white">5 Star</p>
+        <p className="mt-2 text-sm text-white/55">Customer reviews</p>
       </div>
 
-      <div>
-        <p className="text-lg font-semibold text-white">UK Wide</p>
-        <p className="text-xs text-white/50 uppercase tracking-wider">
-          Nationwide Delivery
-        </p>
+      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
+        <p className="text-2xl font-semibold text-white">UK Wide</p>
+        <p className="mt-2 text-sm text-white/55">Nationwide delivery</p>
       </div>
 
     </div>
-
   </div>
 </section>
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
