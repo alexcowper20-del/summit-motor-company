@@ -202,7 +202,7 @@ export default function CarDealershipWebsite() {
 function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
       <div className="min-h-screen bg-[#0b0b0b] text-white">
         <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+          <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8">
             <button onClick={() => goToPage("home")} className="text-left">
               
               <div className="mt-1 flex items-center gap-2 text-lg font-semibold">
