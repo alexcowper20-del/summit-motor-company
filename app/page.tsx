@@ -173,7 +173,7 @@ export default function CarDealershipWebsite() {
 
   const soldCars = stock.filter((car) => car.status === "sold");
 
-  const currency = (value) =>
+  const currency = (value: number) =>
     new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", maximumFractionDigits: 0 }).format(value);
 
   const pageLinks = [
