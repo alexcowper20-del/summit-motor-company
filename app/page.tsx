@@ -212,7 +212,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
   width={140}
   height={40}
 />
-                <span>Your Dealership</span>
+                <span>Summit Motor Company</span>
               </div>
             </button>
 
