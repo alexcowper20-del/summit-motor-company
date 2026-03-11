@@ -204,15 +204,15 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
         <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
             <button onClick={() => goToPage("home")} className="text-left">
-              <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Prestige Motor Group</p>
+              
               <div className="mt-1 flex items-center gap-2 text-lg font-semibold">
                 <Image
-  src="/logo/summit-logo.png"
+  src="summit-logo.png"
   alt="Summit Motor Company"
   width={140}
   height={40}
 />
-                <span>Summit Motor Company</span>
+                
               </div>
             </button>
 
