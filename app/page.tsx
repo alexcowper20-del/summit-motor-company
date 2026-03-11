@@ -396,7 +396,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
               <p className="text-xs uppercase tracking-[0.35em] text-white/45">Latest vehicles</p>
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Curated stock, presented properly</h2>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Vehicles for sale</h2>
             </div>
             <button onClick={() => goToPage("stock")} className="hidden text-sm text-white/75 hover:text-white md:block">
               View all stock
