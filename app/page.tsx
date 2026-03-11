@@ -396,18 +396,18 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     <div className="grid gap-4 sm:grid-cols-3">
 
       <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">50+ Carefully selected </p>
-        <p className="mt-2 text-sm text-white/55">Vehicles in stock</p>
+        <p className="text-2xl font-semibold text-white">50+ Carefully selected vehicles in stock </p>
+        <p className="mt-2 text-sm text-white/55">Check out all of our latest stock</p>
       </div>
 
       <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">Used vehicles trusted</p>
-        <p className="mt-2 text-sm text-white/55">by many customers</p>
+        <p className="text-2xl font-semibold text-white">Used cars you can trust</p>
+        <p className="mt-2 text-sm text-white/55">We carefully select our vehicles so they are perfect for our customers</p>
       </div>
 
       <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">Nationwide Delivery</p>
-        <p className="mt-2 text-sm text-white/55">Availiable</p>
+        <p className="text-2xl font-semibold text-white">Nationwide Delivery available</p>
+        <p className="mt-2 text-sm text-white/55">Nationwide delivery available with every purchase T&Cs apply</p>
       </div>
 
     </div>
