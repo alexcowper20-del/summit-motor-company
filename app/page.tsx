@@ -209,8 +209,8 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
                 <Image
   src="summit-logo.png"
   alt="Summit Motor Company"
-  width={140}
-  height={40}
+  width={90}
+  height={30}
 />
                 
               </div>
