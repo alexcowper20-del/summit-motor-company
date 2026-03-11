@@ -317,8 +317,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
     );
   }
 
-  function StockCard({ car, hidePrice = false }) {
-    return (
+function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {    return (
       <article className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
         <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
         <div className="p-6">
