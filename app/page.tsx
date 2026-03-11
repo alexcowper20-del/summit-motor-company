@@ -17,18 +17,18 @@ export default function CarDealershipWebsite() {
   const [priceFilter, setPriceFilter] = useState("Any budget");
 
   const contactDetails = {
-    phone: "01604 000000",
-    sales: "sales@yourdealership.co.uk",
-    buying: "buying@yourdealership.co.uk",
-    address: ["Unit 4, Trade Centre", "Northampton", "NN1 1AA", "United Kingdom"],
+    phone: "01484255541",
+    sales: "Hello@summitmotorcompany.co.uk",
+    buying: "buying@summitmotorcompany.co.uk",
+    address: ["Unit 3 Victoria Business Park, Sheffield Road, Holmfirth, West Yorkshire, HD9 7TT"],
     openingTimes: [
-      ["Monday", "09:00 - 18:00"],
-      ["Tuesday", "09:00 - 18:00"],
-      ["Wednesday", "09:00 - 18:00"],
-      ["Thursday", "09:00 - 18:00"],
-      ["Friday", "09:00 - 18:00"],
-      ["Saturday", "09:00 - 17:00"],
-      ["Sunday", "By appointment"],
+      ["Monday", "APPOINTMENT ONLY"],
+      ["Tuesday", "APPOINTMENT ONLY"],
+      ["Wednesday", "APPOINTMENT ONLY"],
+      ["Thursday", "APPOINTMENT ONLY"],
+      ["Friday", "APPOINTMENT ONLY"],
+      ["Saturday", "APPOINTMENT ONLY"],
+      ["Sunday", "APPOINTMENT ONLY"],
     ],
   };
 
