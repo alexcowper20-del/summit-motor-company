@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { CarFront, Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
@@ -205,7 +206,12 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
             <button onClick={() => goToPage("home")} className="text-left">
               <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Prestige Motor Group</p>
               <div className="mt-1 flex items-center gap-2 text-lg font-semibold">
-                <CarFront className="h-5 w-5" />
+                <Image
+  src="/logo/summit-logo.png"
+  alt="Summit Motor Company"
+  width={140}
+  height={40}
+/>
                 <span>Your Dealership</span>
               </div>
             </button>
