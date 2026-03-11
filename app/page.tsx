@@ -363,12 +363,12 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
 
           <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1.35fr_0.9fr] lg:px-8 lg:py-28">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Prestige & performance vehicles</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Used performance vehicles</p>
               <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.02] md:text-7xl">
-                A premium dealership layout built for serious stock presentation.
+                Used Car Specialists, welcome to Summit.
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-                This version is structured around the style you referenced: strong hero section, premium spacing, clean navigation, high-end vehicle cards, and dedicated pages for sales, buying, reviews, and contact.
+                Carefully selected premium vehicles.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
@@ -387,9 +387,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              <HeroCard label="Vehicles in stock" value={`${stock.filter((c) => c.status === "in-stock").length}+`} />
-              <HeroCard label="Google-style review score" value="4.9/5" />
-              <HeroCard label="Nationwide buying & sales" value="UK-wide" />
+              
             </div>
           </div>
         </section>
