@@ -1,7 +1,13 @@
 "use client";
 import { useMemo, useState } from "react";
+import type { ReactNode } from "react";
 import { CarFront, Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
-
+type ShellProps = {
+  children: ReactNode;
+  title?: string;
+  eyebrow?: string;
+  intro?: string;
+};
 export default function CarDealershipWebsite() {
   const [currentPage, setCurrentPage] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -192,8 +198,7 @@ export default function CarDealershipWebsite() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  function Shell({ children, title, eyebrow, intro }) {
-    return (
+function Shell({ children, title, eyebrow, intro }: ShellProps) {    return (
       <div className="min-h-screen bg-[#0b0b0b] text-white">
         <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
