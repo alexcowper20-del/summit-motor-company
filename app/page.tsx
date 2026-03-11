@@ -354,9 +354,9 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="relative overflow-hidden border-b border-white/10">
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=80"
+              src="https://unsplash.com/photos/black-vehicle-XDZsJnC5z6s"
               alt="Luxury showroom car"
-              className="h-full w-full object-cover opacity-25"
+              className="h-full w-full object-cover opacity-50"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/55 to-[#0b0b0b]" />
           </div>
