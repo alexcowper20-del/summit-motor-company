@@ -365,7 +365,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             <div>
               <p className="text-xs uppercase tracking-[0.35em] text-white/45">Used performance vehicles</p>
               <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.02] md:text-7xl">
-                Used Car Specialists, welcome to Summit.
+                Welcome to Summit
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
                 Carefully selected premium vehicles.
