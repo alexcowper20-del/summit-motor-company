@@ -1,3 +1,4 @@
+"use client";
 import { useMemo, useState } from "react";
 import { CarFront, Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
 
