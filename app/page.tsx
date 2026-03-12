@@ -449,10 +449,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Carefully selected premium stock",
+                "Hand-picked quality used vehicles",
                 "Appointment-only customer service",
-                "Straightforward buying experience",
-                "Nationwide delivery available",
+                "Straightforward, professional buying experience",
+                "Nationwide delivery available across the UK",
               ].map((item) => (
                 <div
                   key={item}
@@ -480,15 +480,15 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="grid gap-8 lg:grid-cols-3">
             {[
               {
-                title: "Exacting standards",
+                title: "Quality stock",
                 text: "Every vehicle in stock is carefully chosen and professionally presented, with clear information and preparation standards that reflect the quality of the cars we sell.",
               },
               {
-                title: "A proper customer journey",
+                title: "Straightforward service",
                 text: "From your first enquiry to final handover, we aim to keep the process organised, straightforward, and enjoyable, whether you are buying locally or from further afield.",
               },
               {
-                title: "Long-term trust",
+                title: "Built on trust",
                 text: "We believe buying a used vehicle should feel clear and confidence-inspiring, with the right support, strong presentation, and service that encourages customers to come back again.",
               },
             ].map((item) => (
@@ -511,7 +511,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Stock list"
-        title="Browse our current vehicle collection."
+        title="Browse our current stock of quality used vehicles."
         intro="Browse our current stock of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
       >
         <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
@@ -629,8 +629,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="First name" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Last name" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Email address" />
-                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Phone number" />
-                <textarea className="min-h-[160px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="How can we help?" />
+                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Telephone number" />
+                <textarea className="min-h-[160px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Tell us how we can help and we will get back to you as soon as possible." />
               </div>
               <button
                 className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
@@ -674,7 +674,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
   style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
 >
                 <div className="flex h-72 items-center justify-center bg-[linear-gradient(135deg,#1a1a1a,#0f0f0f)] text-center text-white/45">
-                  Google Map embed goes here
+                  Map location for Summit Motor Company.
                 </div>
               </div>
             </div>
@@ -742,10 +742,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Full name" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Phone number" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Email address" />
-                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Registration" />
+                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Vehicle registration" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Mileage" />
-                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Make and model" />
-                <textarea className="min-h-[140px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Tell us about the car, condition, service history, and any modifications" />
+                <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Vehicle make and model" />
+                <textarea className="min-h-[140px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Tell us about the vehicle, its condition, service history, specification, and anything else you think would be useful." />
               </div>
               <button
                 className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
@@ -765,7 +765,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Testimonials"
         title="What our customers say about us."
-        intro="We pride ourselves on offering quality used vehicles and a first-class service, and our customer feedback reflects the way we like to do business."
+        intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we do business."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2">
