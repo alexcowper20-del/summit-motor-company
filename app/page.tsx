@@ -289,7 +289,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-white">Quick links</h3>
+              <h3 className="font-semibold text-white">Explore</h3>
               <div className="mt-4 grid gap-2">
                 {pageLinks.map(([key, label]) => (
                   <button key={key} onClick={() => goToPage(key)} className="text-left hover:text-[#99f2d1]">
@@ -299,7 +299,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-white">Contact</h3>
+              <h3 className="font-semibold text-white">Get in touch</h3>
               <div className="mt-4 space-y-2 leading-6">
                 <p>{contactDetails.phone}</p>
                 <p>{contactDetails.sales}</p>
@@ -307,7 +307,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-white">Visit us</h3>
+              <h3 className="font-semibold text-white">Our showroom</h3>
               <div className="mt-4 space-y-1 leading-6">
                 {contactDetails.address.map((line) => (
                   <p key={line}>{line}</p>
@@ -421,7 +421,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Featured vehicles</h2>
             </div>
             <button onClick={() => goToPage("stock")} className="hidden text-sm text-white/75 hover:text-[#99f2d1] md:block">
-              View all stock
+              Browse all stock
             </button>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -605,16 +605,16 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <div className="flex items-start gap-4">
                   <Phone className="mt-1 h-5 w-5 text-white/65" />
                   <div>
-                    <p className="text-sm text-white/45">Phone</p>
+                    <p className="text-sm text-white/45">Telephone</p>
                     <p className="mt-1 text-lg font-medium">{contactDetails.phone}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="mt-1 h-5 w-5 text-white/65" />
                   <div>
-                    <p className="text-sm text-white/45">Sales</p>
+                    <p className="text-sm text-white/45">Email us</p>
                     <p className="mt-1 text-lg font-medium">{contactDetails.sales}</p>
-                    <p className="mt-4 text-sm text-white/45">Vehicle buying</p>
+                    <p className="mt-4 text-sm text-white/45">Selling your vehicle</p>
                     <p className="mt-1 text-lg font-medium">{contactDetails.buying}</p>
                   </div>
                 </div>
@@ -661,7 +661,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-5 w-5 text-white/65" />
                 <div>
-                  <p className="text-sm text-white/45">Showroom address</p>
+                  <p className="text-sm text-white/45">Our address</p>
                   <div className="mt-2 space-y-1 text-lg font-medium">
                     {contactDetails.address.map((line) => (
                       <p key={line}>{line}</p>
@@ -715,7 +715,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
               style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
             >
-              <h2 className="text-2xl font-semibold">Why sell through us?</h2>
+              <h2 className="text-2xl font-semibold">Why sell through Summit?</h2>
               <div className="mt-6 grid gap-4">
                 {[
                   "Fast response from our team",
@@ -781,7 +781,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                   ))}
                 </div>
                 <p className="mt-5 text-lg leading-8 text-white/82">“{item.text}”</p>
-                <p className="mt-6 text-sm font-medium text-white/55">{item.name}</p>
+                <p className="mt-6 text-sm font-medium text-white/55">Verified customer</p>
               </article>
             ))}
           </div>
