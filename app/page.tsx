@@ -486,7 +486,11 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 text: "This layout leaves space for warranty info, finance support, aftersales, detailing, transport, and repeat-customer credibility.",
               },
             ].map((item) => (
-              <div key={item.title} className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+              <div
+                key={item.title}
+                className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+                style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+              >
                 <h2 className="text-2xl font-semibold">{item.title}</h2>
                 <p className="mt-4 text-base leading-7 text-white/72">{item.text}</p>
               </div>
@@ -666,7 +670,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               </div>
             </div>
 
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <div
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <div className="flex items-center gap-3">
                 <Clock3 className="h-5 w-5 text-white/65" />
                 <h2 className="text-2xl font-semibold">Opening times</h2>
