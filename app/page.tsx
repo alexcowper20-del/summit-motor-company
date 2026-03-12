@@ -226,7 +226,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
                 <button
                   key={key}
                   onClick={() => goToPage(key)}
-                  className={`text-sm transition ${currentPage === key ? "text-white" : "text-white/65 hover:text-white"}`}
+                  className={`text-sm transition ${currentPage === key ? "text-white" : "text-white/65 hover:text-[#99f2d1]"}`}
                 >
                   {label}
                 </button>
@@ -236,7 +236,8 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => goToPage("contact")}
-                className="hidden rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-white/30 hover:bg-white hover:text-black lg:block"
+                className="hidden rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90 lg:block"
+                style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
               >
                 Enquire now
               </button>
