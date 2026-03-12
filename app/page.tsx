@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import { Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight, ArrowLeft, Fuel, Gauge, Calendar } from "lucide-react";
 type ShellProps = {
   children: ReactNode;
   title?: string;
@@ -19,6 +19,7 @@ export default function CarDealershipWebsite() {
   const [makeFilter, setMakeFilter] = useState("All makes");
   const [bodyFilter, setBodyFilter] = useState("All body styles");
   const [priceFilter, setPriceFilter] = useState("Any budget");
+  const [selectedVehicle, setSelectedVehicle] = useState<any | null>(null);
 
   const contactDetails = {
     phone: "01484255541",
@@ -202,6 +203,13 @@ export default function CarDealershipWebsite() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const openVehiclePage = (car: any) => {
+    setSelectedVehicle(car);
+    setCurrentPage("vehicle");
+    setMobileOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 function Shell({ children, title, eyebrow, intro }: ShellProps) {
   return (
       <div className="min-h-screen bg-[#0b0b0b] text-white">
@@ -321,7 +329,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
   }
 
 
-function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {
+function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: boolean; onView?: (car: any) => void }) {
   return (
     <article
       className="group overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
@@ -345,7 +353,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="rounded-2xl bg-black/30 p-3">{car.transmission}</div>
           <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
         </div>
-        <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 transition hover:text-[#99f2d1] hover:drop-shadow-[0_0_10px_rgba(153,242,209,0.35)]">
+        <button onClick={() => onView?.(car)} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 transition hover:text-[#99f2d1] hover:drop-shadow-[0_0_10px_rgba(153,242,209,0.35)]">
           Full details <ChevronRight className="h-4 w-4" />
         </button>
       </div>
@@ -426,7 +434,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {stock.filter((car) => car.status === "in-stock").slice(0, 3).map((car) => (
-              <StockCard key={car.id} car={car} />
+              <StockCard key={car.id} car={car} onView={openVehiclePage} />
             ))}
           </div>
         </section>
@@ -562,7 +570,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
 
           <div className="mt-8 grid gap-6 lg:grid-cols-3">
             {filteredInStock.map((car) => (
-              <StockCard key={car.id} car={car} />
+              <StockCard key={car.id} car={car} onView={openVehiclePage} />
             ))}
           </div>
         </section>
@@ -580,7 +588,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
             {soldCars.map((car) => (
-              <StockCard key={car.id} car={car} hidePrice />
+              <StockCard key={car.id} car={car} hidePrice onView={openVehiclePage} />
             ))}
           </div>
         </section>
@@ -790,5 +798,91 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     );
   }
 
+  if (currentPage === "vehicle" && selectedVehicle) {
+    return (
+      <Shell
+        eyebrow="Vehicle details"
+        title={selectedVehicle.name}
+        intro={`Browse the full details for this ${selectedVehicle.year} ${selectedVehicle.make} including mileage, transmission, fuel type, and pricing.`}
+      >
+        <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
+          <button
+            onClick={() => goToPage(selectedVehicle.status === "sold" ? "sold" : "stock")}
+            className="mb-8 inline-flex items-center gap-2 text-sm text-white/70 transition hover:text-[#99f2d1]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to {selectedVehicle.status === "sold" ? "sold stock" : "stock list"}
+          </button>
+
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <div
+                className="overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03]"
+                style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+              >
+                <img src={selectedVehicle.image} alt={selectedVehicle.name} className="h-[420px] w-full object-cover" />
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">{selectedVehicle.make}</p>
+              <h2 className="mt-3 text-4xl font-semibold leading-tight">{selectedVehicle.name}</h2>
+              <p className="mt-4 text-3xl font-semibold text-white">
+                {selectedVehicle.status === "sold" || !selectedVehicle.price ? "Previously sold" : currency(selectedVehicle.price)}
+              </p>
+
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
+                  <div className="flex items-center gap-2 text-white/50"><Calendar className="h-4 w-4" /><span className="text-sm">Year</span></div>
+                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.year}</p>
+                </div>
+                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
+                  <div className="flex items-center gap-2 text-white/50"><Gauge className="h-4 w-4" /><span className="text-sm">Mileage</span></div>
+                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.mileage.toLocaleString()} miles</p>
+                </div>
+                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
+                  <div className="flex items-center gap-2 text-white/50"><Fuel className="h-4 w-4" /><span className="text-sm">Fuel</span></div>
+                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.fuel}</p>
+                </div>
+                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
+                  <div className="flex items-center gap-2 text-white/50"><ChevronRight className="h-4 w-4" /><span className="text-sm">Transmission</span></div>
+                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.transmission}</p>
+                </div>
+              </div>
+
+              <div className="mt-8 rounded-[28px] border border-white/10 bg-white/[0.03] p-6" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
+                <h3 className="text-xl font-semibold">Vehicle overview</h3>
+                <p className="mt-4 text-base leading-7 text-white/70">
+                  This {selectedVehicle.year} {selectedVehicle.name} is presented in our current stock selection with key information including mileage, fuel type, transmission, and body style. For more information or to arrange a viewing, please get in touch with Summit Motor Company.
+                </p>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-white/75">
+                  <div className="rounded-2xl bg-black/25 p-4">Body style: {selectedVehicle.body}</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Make: {selectedVehicle.make}</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Status: {selectedVehicle.status === "sold" ? "Previously sold" : "Available now"}</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Location: Holmfirth</div>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <button
+                  onClick={() => goToPage("contact")}
+                  className="rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
+                  style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
+                >
+                  Enquire now
+                </button>
+                <button
+                  onClick={() => goToPage("find")}
+                  className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-[#99f2d1] hover:text-[#99f2d1]"
+                >
+                  Book a viewing
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </Shell>
+    );
+  }
   return null;
 }
