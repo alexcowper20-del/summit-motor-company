@@ -20,6 +20,7 @@ export default function CarDealershipWebsite() {
   const [bodyFilter, setBodyFilter] = useState("All body styles");
   const [priceFilter, setPriceFilter] = useState("Any budget");
   const [selectedVehicle, setSelectedVehicle] = useState<any | null>(null);
+  const [selectedVehicleImageIndex, setSelectedVehicleImageIndex] = useState(0);
 
   const contactDetails = {
     phone: "01484255541",
@@ -205,6 +206,7 @@ export default function CarDealershipWebsite() {
 
   const openVehiclePage = (car: any) => {
     setSelectedVehicle(car);
+    setSelectedVehicleImageIndex(0);
     setCurrentPage("vehicle");
     setMobileOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -799,6 +801,8 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   }
 
   if (currentPage === "vehicle" && selectedVehicle) {
+    // Vehicle images array (placeholder: using the same image for all)
+    const vehicleImages = [selectedVehicle.image, selectedVehicle.image, selectedVehicle.image, selectedVehicle.image];
     return (
       <Shell
         eyebrow="Vehicle"
@@ -820,19 +824,23 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
                 className="overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03]"
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
               >
-                <img src={selectedVehicle.image} alt={selectedVehicle.name} className="h-[520px] w-full object-cover" />
+                <img src={vehicleImages[selectedVehicleImageIndex]} alt={selectedVehicle.name} className="h-[520px] w-full object-cover" />
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-3">
-                {[selectedVehicle.image, selectedVehicle.image, selectedVehicle.image].map((image, index) => (
-                  <div
-                    key={index}
-                    className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03]"
-                    style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
-                  >
-                    <img src={image} alt={`${selectedVehicle.name} view ${index + 1}`} className="h-32 w-full object-cover" />
-                  </div>
-                ))}
+              <div className="overflow-x-auto pb-2">
+                <div className="flex gap-4 min-w-max">
+                  {vehicleImages.map((image, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => setSelectedVehicleImageIndex(index)}
+                      className={`overflow-hidden rounded-[24px] border bg-white/[0.03] transition ${selectedVehicleImageIndex === index ? "border-[#99f2d1]" : "border-white/10 hover:border-[#99f2d1]"}`}
+                      style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+                    >
+                      <img src={image} alt={`${selectedVehicle.name} view ${index + 1}`} className="h-32 w-44 object-cover" />
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
