@@ -226,7 +226,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
                 <button
                   key={key}
                   onClick={() => goToPage(key)}
-                  className={`text-sm transition ${currentPage === key ? "text-white" : "text-white/65 hover:text-[#99f2d1]"}`}
+                  className={`border-b pb-1 text-sm transition ${currentPage === key ? "border-[#99f2d1] text-white" : "border-transparent text-white/65 hover:text-[#99f2d1]"}`}
                 >
                   {label}
                 </button>
@@ -324,10 +324,10 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
 function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {
   return (
     <article
-      className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
+      className="group overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
       style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
     >
-      <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
+      <img src={car.image} alt={car.name} className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
