@@ -257,7 +257,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
                   <button
                     key={key}
                     onClick={() => goToPage(key)}
-                    className="rounded-2xl px-4 py-3 text-left text-sm text-white/80 transition hover:bg-white/5 hover:text-white"
+                    className="rounded-2xl px-4 py-3 text-left text-sm text-white/80 transition hover:bg-white/5 hover:text-[#99f2d1]"
                   >
                     {label}
                   </button>
@@ -292,7 +292,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               <h3 className="font-semibold text-white">Quick links</h3>
               <div className="mt-4 grid gap-2">
                 {pageLinks.map(([key, label]) => (
-                  <button key={key} onClick={() => goToPage(key)} className="text-left hover:text-white">
+                  <button key={key} onClick={() => goToPage(key)} className="text-left hover:text-[#99f2d1]">
                     {label}
                   </button>
                 ))}
