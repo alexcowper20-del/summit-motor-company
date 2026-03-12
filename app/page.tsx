@@ -584,7 +584,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <div
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <Phone className="mt-1 h-5 w-5 text-white/65" />
@@ -695,7 +698,11 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                   "Straight purchase or sale-or-return options",
                   "Nationwide vehicle collection available",
                 ].map((item) => (
-                  <div key={item} className="rounded-2xl bg-black/25 p-4 text-sm text-white/75">
+                  <div
+  key={item}
+  className="rounded-2xl bg-black/25 p-4 text-sm text-white/75"
+  style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+>
                     {item}
                   </div>
                 ))}
