@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import { Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight, ArrowLeft, Fuel, Gauge, Calendar } from "lucide-react";
 type ShellProps = {
@@ -21,8 +21,6 @@ export default function CarDealershipWebsite() {
   const [priceFilter, setPriceFilter] = useState("Any budget");
   const [selectedVehicle, setSelectedVehicle] = useState<any | null>(null);
   const [selectedVehicleImageIndex, setSelectedVehicleImageIndex] = useState(0);
-  const [displayedVehicleImage, setDisplayedVehicleImage] = useState("");
-  const [fadingVehicleImage, setFadingVehicleImage] = useState("");
 
   const contactDetails = {
     phone: "01484255541",
@@ -209,29 +207,11 @@ export default function CarDealershipWebsite() {
   const openVehiclePage = (car: any) => {
     setSelectedVehicle(car);
     setSelectedVehicleImageIndex(0);
-    setDisplayedVehicleImage(car.image);
-    setFadingVehicleImage("");
     setCurrentPage("vehicle");
     setMobileOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  useEffect(() => {
-    if (!selectedVehicle || currentPage !== "vehicle") return;
-
-    const vehicleImages = [selectedVehicle.image, selectedVehicle.image, selectedVehicle.image, selectedVehicle.image];
-    const nextImage = vehicleImages[selectedVehicleImageIndex];
-
-    if (!nextImage || nextImage === displayedVehicleImage) return;
-
-    const img = new window.Image();
-    img.src = nextImage;
-    img.onload = () => {
-      setFadingVehicleImage(displayedVehicleImage);
-      setDisplayedVehicleImage(nextImage);
-      window.setTimeout(() => setFadingVehicleImage(""), 250);
-    };
-  }, [selectedVehicleImageIndex, selectedVehicle, currentPage, displayedVehicleImage]);
 
 function Shell({ children, title, eyebrow, intro }: ShellProps) {
   return (
@@ -824,9 +804,6 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "vehicle" && selectedVehicle) {
     // Vehicle images array (placeholder: using the same image for all)
     const vehicleImages = [selectedVehicle.image, selectedVehicle.image, selectedVehicle.image, selectedVehicle.image];
-    if (!displayedVehicleImage) {
-      setDisplayedVehicleImage(vehicleImages[0]);
-    }
     return (
       <Shell
         eyebrow="Vehicle"
@@ -845,18 +822,11 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-5">
               <div
-                className="relative overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03]"
+                className="overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03]"
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
               >
-                {fadingVehicleImage && (
-                  <img
-                    src={fadingVehicleImage}
-                    alt={selectedVehicle.name}
-                    className="absolute inset-0 h-[520px] w-full object-cover opacity-0 transition-opacity duration-200"
-                  />
-                )}
                 <img
-                  src={displayedVehicleImage || vehicleImages[selectedVehicleImageIndex]}
+                  src={vehicleImages[selectedVehicleImageIndex]}
                   alt={selectedVehicle.name}
                   className="h-[520px] w-full object-cover"
                 />
