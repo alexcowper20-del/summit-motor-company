@@ -346,7 +346,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
         </div>
         <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 transition hover:text-[#99f2d1] hover:drop-shadow-[0_0_10px_rgba(153,242,209,0.35)]">
-          View details <ChevronRight className="h-4 w-4" />
+          View vehicle <ChevronRight className="h-4 w-4" />
         </button>
       </div>
     </article>
@@ -434,7 +434,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="border-y border-white/10 bg-white/[0.03]">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Why Summit</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Why choose Summit</p>
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">A more personal approach to vehicle sales.</h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72">
                 At Summit Motor Company, we keep a variety of hand-picked vehicles in stock and focus on delivering a straightforward, professional experience from first enquiry through to handover.
@@ -524,7 +524,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <input
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search make or model"
+                placeholder="Search make, model or keyword"
                 className="w-full rounded-2xl border border-white/10 bg-black/20 py-3 pl-11 pr-4 text-sm outline-none placeholder:text-white/30 focus:border-[#99f2d1]"
               />
             </div>
@@ -556,7 +556,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               }}
               className="hover:text-[#99f2d1]"
             >
-              Reset filters
+              Clear filters
             </button>
           </div>
 
@@ -685,7 +685,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             >
               <div className="flex items-center gap-3">
                 <Clock3 className="h-5 w-5 text-white/65" />
-                <h2 className="text-2xl font-semibold">Opening times</h2>
+                <h2 className="text-2xl font-semibold">Viewing times</h2>
               </div>
               <div className="mt-6 divide-y divide-white/10">
                 {contactDetails.openingTimes.map(([day, time]) => (
@@ -765,7 +765,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Customer reviews"
         title="What our customers say about us."
-        intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we do business."
+        intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we like to do business."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2">
