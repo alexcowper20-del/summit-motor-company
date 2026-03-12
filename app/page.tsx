@@ -898,7 +898,7 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
           </button>
 
           <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-5">
+            <div className="min-w-0 space-y-5">
               <div
                 className="overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03]"
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
@@ -910,14 +910,14 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
                 />
               </div>
 
-              <div className="overflow-x-auto pb-2">
-                <div className="flex gap-4 min-w-max">
+              <div className="max-w-full overflow-x-auto pb-2">
+                <div className="flex w-max gap-4">
                   {vehicleImages.map((image, index) => (
                     <button
                       key={index}
                       type="button"
                       onClick={() => setSelectedVehicleImageIndex(index)}
-                      className={`overflow-hidden rounded-[24px] border bg-white/[0.03] transition ${selectedVehicleImageIndex === index ? "border-[#99f2d1]" : "border-white/10 hover:border-[#99f2d1]"}`}
+                      className={`shrink-0 overflow-hidden rounded-[24px] border bg-white/[0.03] transition ${selectedVehicleImageIndex === index ? "border-[#99f2d1]" : "border-white/10 hover:border-[#99f2d1]"}`}
                       style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
                     >
                       <img src={image} alt={`${selectedVehicle.name} view ${index + 1}`} className="h-32 w-44 object-cover" />
@@ -940,7 +940,7 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="min-w-0 space-y-6">
               <div
                 className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
@@ -993,11 +993,11 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
                   </div>
                   <div className="flex items-center justify-between border-b border-white/10 pb-4">
                     <span className="text-white/50">Model</span>
-                    <span className="font-medium text-white">{selectedVehicle.name}</span>
+                    <span className="max-w-[55%] text-right font-medium text-white">{selectedVehicle.name}</span>
                   </div>
                   <div className="flex items-center justify-between border-b border-white/10 pb-4">
                     <span className="text-white/50">Mileage</span>
-                    <span className="font-medium text-white">{selectedVehicle.mileage.toLocaleString()} miles</span>
+                    <span className="text-right font-medium text-white">{selectedVehicle.mileage.toLocaleString()} miles</span>
                   </div>
                   <div className="flex items-center justify-between border-b border-white/10 pb-4">
                     <span className="text-white/50">Fuel type</span>
@@ -1017,7 +1017,7 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
           </div>
 
           <div
-            className="mt-10 rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+            className="mt-10 w-full rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
             style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
           >
             <h3 className="text-2xl font-semibold">Why buy from Summit?</h3>
