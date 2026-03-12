@@ -324,7 +324,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
 function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {
   return (
     <article
-      className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20"
+      className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
       style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
     >
       <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
@@ -535,7 +535,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <option key={option}>{option}</option>
               ))}
             </select>
-            <select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none">
+            <select value={priceFilter} onChange={(e) => setPriceFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none focus:border-[#99f2d1]">
               {["Any budget", "Under £40,000", "£40,000 - £70,000", "£70,000+"].map((option) => (
                 <option key={option}>{option}</option>
               ))}
