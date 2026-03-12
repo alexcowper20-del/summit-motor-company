@@ -327,7 +327,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       className="group overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
       style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
     >
-      <img src={car.image} alt={car.name} className="h-64 w-full object-cover transition duration-500 group-hover:scale-105" />
+      <img src={car.image} alt={car.name} className="h-64 w-full object-cover brightness-90 transition duration-500 group-hover:scale-105 group-hover:brightness-100" />
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -380,7 +380,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
   <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
     <div className="grid gap-4 sm:grid-cols-3">
       <div
-        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#99f2d1]"
         style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
       >
         <p className="text-2xl font-semibold text-white">Carefully selected stock</p>
@@ -390,7 +390,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       </div>
 
       <div
-        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#99f2d1]"
         style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
       >
         <p className="text-2xl font-semibold text-white">Straightforward service</p>
@@ -400,7 +400,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       </div>
 
       <div
-        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-[#99f2d1]"
         style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
       >
         <p className="text-2xl font-semibold text-white">UK wide delivery</p>
