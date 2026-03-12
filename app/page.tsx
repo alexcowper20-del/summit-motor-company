@@ -608,7 +608,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               </div>
             </div>
 
-            <form className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <form
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <div className="grid gap-4 md:grid-cols-2">
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="First name" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Last name" />
@@ -712,7 +715,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               </div>
             </div>
 
-            <form className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <form
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <div className="grid gap-4 md:grid-cols-2">
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Full name" />
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30" placeholder="Phone number" />
