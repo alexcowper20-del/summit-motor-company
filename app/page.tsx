@@ -283,9 +283,9 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
         <footer className="border-t border-white/10 bg-black/40">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 text-sm text-white/65 lg:grid-cols-4 lg:px-8">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Your Dealership</p>
+              <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Summit Motor Company</p>
               <p className="mt-4 max-w-xs leading-6">
-                Premium used vehicle website inspired by high-end dealership layouts, ready to deploy on Vercel and customise with your own stock feed and branding.
+                Premium used vehicles in Holmfirth, professionally presented with a straightforward, appointment-led buying experience.
               </p>
             </div>
             <div>
@@ -320,14 +320,6 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
     );
   }
 
-  function HeroCard({ label, value }: { label: string; value: string }) {
-    return (
-      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-3xl font-semibold md:text-4xl">{value}</p>
-        <p className="mt-2 text-sm text-white/55">{label}</p>
-      </div>
-    );
-  }
 
 function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {    return (
       <article className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
