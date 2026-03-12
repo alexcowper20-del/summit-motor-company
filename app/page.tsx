@@ -10,6 +10,147 @@ type ShellProps = {
   intro?: string;
 };
 
+type ShellComponentProps = ShellProps & {
+  currentPage: string;
+  pageLinks: string[][];
+  goToPage: (page: string) => void;
+  mobileOpen: boolean;
+  setMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  contactDetails: {
+    phone: string;
+    sales: string;
+    buying: string;
+    address: string[];
+  };
+};
+
+function Shell({
+  children,
+  title,
+  eyebrow,
+  intro,
+  currentPage,
+  pageLinks,
+  goToPage,
+  mobileOpen,
+  setMobileOpen,
+  contactDetails,
+}: ShellComponentProps) {
+  return (
+    <div className="min-h-screen bg-[#0b0b0b] text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8">
+          <button onClick={() => goToPage("home")} className="text-left">
+            <div className="mt-1 flex items-center gap-2 text-lg font-semibold">
+              <Image
+                src="/summit-logo.png"
+                alt="Summit Motor Company"
+                width={84}
+                height={28}
+                className="object-contain"
+              />
+            </div>
+          </button>
+
+          <nav className="hidden items-center gap-6 lg:flex">
+            {pageLinks.map(([key, label]) => (
+              <button
+                key={key}
+                onClick={() => goToPage(key)}
+                className={`border-b pb-1 text-sm transition ${currentPage === key ? "border-[#99f2d1] text-white" : "border-transparent text-white/65 hover:text-[#99f2d1]"}`}
+              >
+                {label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => goToPage("contact")}
+              className="hidden rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90 lg:block"
+              style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
+            >
+              Enquire now
+            </button>
+            <button
+              onClick={() => setMobileOpen((v) => !v)}
+              className="rounded-full border border-white/10 p-2 transition hover:border-[#99f2d1] hover:text-[#99f2d1] lg:hidden"
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
+        </div>
+
+        {mobileOpen && (
+          <div className="border-t border-white/10 bg-black/90 px-5 py-4 lg:hidden">
+            <div className="grid gap-2">
+              {pageLinks.map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => goToPage(key)}
+                  className="rounded-2xl px-4 py-3 text-left text-sm text-white/80 transition hover:bg-white/5 hover:text-[#99f2d1]"
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+
+      <main>
+        {(title || eyebrow || intro) && (
+          <section className="border-b border-white/10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]">
+            <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
+              {eyebrow && <p className="text-xs uppercase tracking-[0.35em] text-white/45">{eyebrow}</p>}
+              {title && <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{title}</h1>}
+              {intro && <p className="mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">{intro}</p>}
+            </div>
+          </section>
+        )}
+        {children}
+      </main>
+
+      <footer className="border-t border-white/10 bg-black/40">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 text-sm text-white/65 lg:grid-cols-4 lg:px-8">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Summit Motor Company</p>
+            <p className="mt-4 max-w-xs leading-6">
+              Premium used vehicles in Holmfirth, professionally presented with a straightforward, appointment-led buying experience.
+            </p>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white">Explore</h3>
+            <div className="mt-4 grid gap-2">
+              {pageLinks.map(([key, label]) => (
+                <button key={key} onClick={() => goToPage(key)} className="text-left hover:text-[#99f2d1]">
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white">Get in touch</h3>
+            <div className="mt-4 space-y-2 leading-6">
+              <p>{contactDetails.phone}</p>
+              <p>{contactDetails.sales}</p>
+              <p>{contactDetails.buying}</p>
+            </div>
+          </div>
+          <div>
+            <h3 className="font-semibold text-white">Visit Summit</h3>
+            <div className="mt-4 space-y-1 leading-6">
+              {contactDetails.address.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 const ACCENT = "#99f2d1";
 const ACCENT_SOFT = "rgba(153, 242, 209, 0.14)";
 export default function CarDealershipWebsite() {
@@ -213,124 +354,6 @@ export default function CarDealershipWebsite() {
   };
 
 
-function Shell({ children, title, eyebrow, intro }: ShellProps) {
-  return (
-      <div className="min-h-screen bg-[#0b0b0b] text-white">
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8">
-            <button onClick={() => goToPage("home")} className="text-left">
-              
-              <div className="mt-1 flex items-center gap-2 text-lg font-semibold">
-                <Image
-  src="/summit-logo.png"
-  alt="Summit Motor Company"
-  width={84}
-  height={28}
-  className="object-contain"
-/>
-                
-              </div>
-            </button>
-
-            <nav className="hidden items-center gap-6 lg:flex">
-              {pageLinks.map(([key, label]) => (
-                <button
-                  key={key}
-                  onClick={() => goToPage(key)}
-                  className={`border-b pb-1 text-sm transition ${currentPage === key ? "border-[#99f2d1] text-white" : "border-transparent text-white/65 hover:text-[#99f2d1]"}`}
-                >
-                  {label}
-                </button>
-              ))}
-            </nav>
-
-            <div className="flex items-center gap-3">
-              <button
-                onClick={() => goToPage("contact")}
-                className="hidden rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90 lg:block"
-                style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
-              >
-                Enquire now
-              </button>
-              <button
-                onClick={() => setMobileOpen((v) => !v)}
-                className="rounded-full border border-white/10 p-2 transition hover:border-[#99f2d1] hover:text-[#99f2d1] lg:hidden"
-              >
-                {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-              </button>
-            </div>
-          </div>
-
-          {mobileOpen && (
-            <div className="border-t border-white/10 bg-black/90 px-5 py-4 lg:hidden">
-              <div className="grid gap-2">
-                {pageLinks.map(([key, label]) => (
-                  <button
-                    key={key}
-                    onClick={() => goToPage(key)}
-                    className="rounded-2xl px-4 py-3 text-left text-sm text-white/80 transition hover:bg-white/5 hover:text-[#99f2d1]"
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-        </header>
-
-        <main>
-          {(title || eyebrow || intro) && (
-            <section className="border-b border-white/10 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]">
-              <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
-                {eyebrow && <p className="text-xs uppercase tracking-[0.35em] text-white/45">{eyebrow}</p>}
-                {title && <h1 className="mt-3 max-w-4xl text-4xl font-semibold leading-tight md:text-5xl">{title}</h1>}
-                {intro && <p className="mt-5 max-w-3xl text-base leading-7 text-white/70 md:text-lg">{intro}</p>}
-              </div>
-            </section>
-          )}
-          {children}
-        </main>
-
-        <footer className="border-t border-white/10 bg-black/40">
-          <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 text-sm text-white/65 lg:grid-cols-4 lg:px-8">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">Summit Motor Company</p>
-              <p className="mt-4 max-w-xs leading-6">
-                Premium used vehicles in Holmfirth, professionally presented with a straightforward, appointment-led buying experience.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white">Explore</h3>
-              <div className="mt-4 grid gap-2">
-                {pageLinks.map(([key, label]) => (
-                  <button key={key} onClick={() => goToPage(key)} className="text-left hover:text-[#99f2d1]">
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white">Get in touch</h3>
-              <div className="mt-4 space-y-2 leading-6">
-                <p>{contactDetails.phone}</p>
-                <p>{contactDetails.sales}</p>
-                <p>{contactDetails.buying}</p>
-              </div>
-            </div>
-            <div>
-              <h3 className="font-semibold text-white">Visit Summit</h3>
-              <div className="mt-4 space-y-1 leading-6">
-                {contactDetails.address.map((line) => (
-                  <p key={line}>{line}</p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    );
-  }
-
 
 function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: boolean; onView?: (car: any) => void }) {
   return (
@@ -366,7 +389,14 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
 
   if (currentPage === "home") {
     return (
-      <Shell>
+      <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
+      >
         <section className="relative overflow-hidden border-b border-white/10">
           <div className="absolute inset-0">
             <img
@@ -483,6 +513,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "about") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="About"
         title="Quality used vehicles, professionally presented and backed by a more personal buying experience."
         intro="At Summit Motor Company, our focus is simple: quality stock, honest communication, and a first-class service for every customer who visits us in Holmfirth or buys from us from elsewhere in the UK."
@@ -521,6 +557,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "stock") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Our stock"
         title="Browse our current stock of quality used vehicles."
         intro="Browse our latest selection of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
@@ -584,6 +626,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "sold") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Previously sold"
         title="A selection of vehicles we have previously sold."
         intro="Our sold vehicles give you a better feel for the type and quality of stock we regularly retail, while keeping the presentation clean and straightforward."
@@ -602,6 +650,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "contact") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Contact us"
         title="Get in touch with Summit Motor Company."
         intro="If you would like to enquire about a vehicle, discuss selling your car, or arrange an appointment, our team will be happy to help."
@@ -659,6 +713,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "find") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Find us"
         title="Visit Summit Motor Company in Holmfirth."
         intro="We are based at Unit 3 Victoria Business Park, Sheffield Road, Holmfirth, West Yorkshire, HD9 7TT. Viewings are available strictly by appointment only, seven days a week."
@@ -716,6 +776,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "sell") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Sell your vehicle"
         title="Looking to sell your vehicle?"
         intro="If you are thinking about selling your vehicle, complete the form below and our team will be in touch. We are always interested in quality stock and aim to keep the process straightforward and professional."
@@ -774,6 +840,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "testimonials") {
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Customer reviews"
         title="What our customers say about Summit Motor Company."
         intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we like to do business."
@@ -806,6 +878,12 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
     const vehicleImages = [selectedVehicle.image, selectedVehicle.image, selectedVehicle.image, selectedVehicle.image];
     return (
       <Shell
+        currentPage={currentPage}
+        pageLinks={pageLinks}
+        goToPage={goToPage}
+        mobileOpen={mobileOpen}
+        setMobileOpen={setMobileOpen}
+        contactDetails={contactDetails}
         eyebrow="Vehicle"
         title={`${selectedVehicle.year} ${selectedVehicle.name}`}
         intro={`Explore full details, pricing, and key specification for this ${selectedVehicle.make} currently offered by Summit Motor Company.`}
