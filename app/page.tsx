@@ -647,7 +647,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                   </div>
                 </div>
               </div>
-              <div className="mt-8 overflow-hidden rounded-[24px] border border-white/10">
+              <div
+  className="mt-8 overflow-hidden rounded-[24px] border border-white/10"
+  style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+>
                 <div className="flex h-72 items-center justify-center bg-[linear-gradient(135deg,#1a1a1a,#0f0f0f)] text-center text-white/45">
                   Google Map embed goes here
                 </div>
@@ -732,7 +735,11 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2">
             {testimonials.map((item) => (
-              <article key={item.name} className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+              <article
+  key={item.name}
+  className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+  style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+>
                 <div className="flex gap-1 text-white">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-white" />
