@@ -925,6 +925,19 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
                   ))}
                 </div>
               </div>
+
+              <div
+                className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+                style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+              >
+                <h3 className="text-2xl font-semibold">Vehicle description</h3>
+                <p className="mt-5 text-base leading-8 text-white/72">
+                  This {selectedVehicle.year} {selectedVehicle.name} is part of our current vehicle collection at Summit Motor Company. It is presented with key information including mileage, transmission, fuel type, and body style, giving you a clear overview before arranging a viewing or making an enquiry.
+                </p>
+                <p className="mt-5 text-base leading-8 text-white/72">
+                  If you would like to know more about this vehicle, request additional information, or arrange an appointment, please get in touch with our team and we will be happy to help.
+                </p>
+              </div>
             </div>
 
             <div className="space-y-6">
@@ -1003,22 +1016,9 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
             </div>
           </div>
 
-          <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="mt-10 flex justify-end">
             <div
-              className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
-              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
-            >
-              <h3 className="text-2xl font-semibold">Vehicle description</h3>
-              <p className="mt-5 text-base leading-8 text-white/72">
-                This {selectedVehicle.year} {selectedVehicle.name} is part of our current vehicle collection at Summit Motor Company. It is presented with key information including mileage, transmission, fuel type, and body style, giving you a clear overview before arranging a viewing or making an enquiry.
-              </p>
-              <p className="mt-5 text-base leading-8 text-white/72">
-                If you would like to know more about this vehicle, request additional information, or arrange an appointment, please get in touch with our team and we will be happy to help.
-              </p>
-            </div>
-
-            <div
-              className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+              className="w-full lg:max-w-[41%] rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
               style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
             >
               <h3 className="text-2xl font-semibold">Why buy from Summit?</h3>
