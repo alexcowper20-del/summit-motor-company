@@ -346,7 +346,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
         </div>
         <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 transition hover:text-[#99f2d1] hover:drop-shadow-[0_0_10px_rgba(153,242,209,0.35)]">
-          View vehicle <ChevronRight className="h-4 w-4" />
+          Full details <ChevronRight className="h-4 w-4" />
         </button>
       </div>
     </article>
@@ -474,7 +474,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="About"
         title="Quality used vehicles, professionally presented and backed by a more personal buying experience."
-        intro="At Summit Motor Company, our focus is simple: quality stock, honest communication, and a first-class service for every customer who visits us in Holmfirth or buys from us remotely."
+        intro="At Summit Motor Company, our focus is simple: quality stock, honest communication, and a first-class service for every customer who visits us in Holmfirth or buys from us from elsewhere in the UK."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3">
@@ -512,7 +512,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Our stock"
         title="Browse our current stock of quality used vehicles."
-        intro="Browse our current stock of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
+        intro="Browse our latest selection of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
       >
         <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
             <div
@@ -575,7 +575,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Previously sold"
         title="A selection of vehicles we have previously sold."
-        intro="Our sold stock page gives you an idea of the type and quality of vehicles we regularly retail, while keeping the presentation clean and focused."
+        intro="Our sold vehicles give you a better feel for the type and quality of stock we regularly retail, while keeping the presentation clean and straightforward."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
@@ -707,7 +707,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Sell your vehicle"
         title="Looking to sell your vehicle?"
-        intro="If you are thinking about selling your vehicle, get in touch with the details below. We are always interested in quality stock and aim to keep the process straightforward and professional."
+        intro="If you are thinking about selling your vehicle, complete the form below and our team will be in touch. We are always interested in quality stock and aim to keep the process straightforward and professional."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
