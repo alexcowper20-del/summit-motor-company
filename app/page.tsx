@@ -509,7 +509,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         intro="This page includes the filter system you asked for, so customers can search stock quickly by keyword, make, body style, and budget."
       >
         <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
-          <div className="grid gap-4 rounded-[30px] border border-white/10 bg-white/[0.03] p-5 lg:grid-cols-4 lg:p-6">
+            <div
+              className="grid gap-4 rounded-[30px] border border-white/10 bg-white/[0.03] p-5 lg:grid-cols-4 lg:p-6"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
             <div className="relative lg:col-span-1">
               <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/35" />
               <input
@@ -702,7 +705,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <div
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <h2 className="text-2xl font-semibold">Why sell through us?</h2>
               <div className="mt-6 grid gap-4">
                 {[
