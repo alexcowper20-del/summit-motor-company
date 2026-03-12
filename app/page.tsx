@@ -369,42 +369,42 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
                 Carefully selected premium vehicles, professionally presented with a straightforward buying experience.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button
-                  onClick={() => goToPage("stock")}
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90"
-                >
-                  View stock
-                </button>
-                <button
-                  onClick={() => goToPage("sell")}
-                  className="rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
-                >
-                  Sell your vehicle
-                </button>
-              </div>
+              <div className="mt-8 h-px w-24" style={{ backgroundColor: ACCENT }} />
             </div>
           </div>
         </section>
 <section className="border-b border-white/10 bg-black">
   <div className="mx-auto max-w-7xl px-5 py-8 lg:px-8">
     <div className="grid gap-4 sm:grid-cols-3">
-
-      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">50+ Carefully selected vehicles in stock </p>
-        <p className="mt-2 text-sm text-white/55">Check out all of our latest stock</p>
+      <div
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+      >
+        <p className="text-2xl font-semibold text-white">Carefully selected stock</p>
+        <p className="mt-2 text-sm text-white/55">
+          Premium vehicles sourced and presented with quality in mind.
+        </p>
       </div>
 
-      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">Used cars you can trust</p>
-        <p className="mt-2 text-sm text-white/55">We carefully select our vehicles so they are perfect for our customers</p>
+      <div
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+      >
+        <p className="text-2xl font-semibold text-white">Straightforward service</p>
+        <p className="mt-2 text-sm text-white/55">
+          An appointment-led experience with honest communication from first enquiry to handover.
+        </p>
       </div>
 
-      <div className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur">
-        <p className="text-2xl font-semibold text-white">Nationwide Delivery available</p>
-        <p className="mt-2 text-sm text-white/55">Nationwide delivery available with every purchase T&Cs apply</p>
+      <div
+        className="rounded-[28px] border border-white/10 bg-white/5 p-5 backdrop-blur"
+        style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+      >
+        <p className="text-2xl font-semibold text-white">UK wide delivery</p>
+        <p className="mt-2 text-sm text-white/55">
+          Nationwide delivery is available across the UK on every purchase.
+        </p>
       </div>
-
     </div>
   </div>
 </section>
