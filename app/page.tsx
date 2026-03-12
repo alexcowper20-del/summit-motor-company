@@ -327,7 +327,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       className="group overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20 transition duration-300 hover:-translate-y-1"
       style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
     >
-      <img src={car.image} alt={car.name} className="h-64 w-full object-cover brightness-90 transition duration-500 group-hover:scale-105 group-hover:brightness-100" />
+      <div className="relative overflow-hidden">
+        <img src={car.image} alt={car.name} className="h-64 w-full object-cover brightness-90 transition duration-500 group-hover:scale-105 group-hover:brightness-100" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent" />
+      </div>
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -342,7 +345,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           <div className="rounded-2xl bg-black/30 p-3">{car.transmission}</div>
           <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
         </div>
-        <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 hover:text-[#99f2d1]">
+        <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 transition hover:text-[#99f2d1] hover:drop-shadow-[0_0_10px_rgba(153,242,209,0.35)]">
           View details <ChevronRight className="h-4 w-4" />
         </button>
       </div>
