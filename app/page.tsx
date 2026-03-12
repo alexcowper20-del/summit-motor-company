@@ -411,10 +411,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Check out current</p>
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Vehicles for sale</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Current stock</p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Featured vehicles</h2>
             </div>
-            <button onClick={() => goToPage("stock")} className="hidden text-sm text-white/75 hover:text-white md:block">
+            <button onClick={() => goToPage("stock")} className="hidden text-sm text-white/75 hover:text-[#99f2d1] md:block">
               View all stock
             </button>
           </div>
@@ -428,14 +428,15 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="border-y border-white/10 bg-white/[0.03]">
           <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">About the dealership</p>
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Built to feel premium without looking overdesigned.</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Why Summit</p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">A more personal approach to vehicle sales.</h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72">
-                The structure follows a prestige dealership approach: clear top navigation, luxury imagery, stock-first browsing, easy enquiry paths, and separate pages for buying, selling, location, and social proof.
+                At Summit Motor Company, we focus on quality stock, clean presentation, and a straightforward buying experience. From first enquiry through to handover, our goal is to keep things simple, professional, and enjoyable.
               </p>
               <button
                 onClick={() => goToPage("about")}
-                className="mt-8 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5"
+                className="mt-8 rounded-full border px-6 py-3 text-sm font-semibold text-[#0b0b0b] transition hover:opacity-90"
+                style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
               >
                 Read more
               </button>
