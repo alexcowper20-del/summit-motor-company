@@ -448,7 +448,11 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 "Straightforward buying experience",
                 "Nationwide delivery available",
               ].map((item) => (
-                <div key={item} className="rounded-[28px] border border-white/10 bg-black/25 p-6 text-sm leading-6 text-white/75">
+                <div
+                  key={item}
+                  className="rounded-[28px] border border-white/10 bg-black/25 p-6 text-sm leading-6 text-white/75"
+                  style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+                >
                   {item}
                 </div>
               ))}
@@ -705,7 +709,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Make and model" />
                 <textarea className="min-h-[140px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Tell us about the car, condition, service history, and any modifications" />
               </div>
-              <button className="mt-5 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90">
+              <button
+                className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
+                style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
+              >
                 Request valuation
               </button>
             </form>
