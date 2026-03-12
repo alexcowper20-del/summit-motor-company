@@ -1016,24 +1016,22 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
             </div>
           </div>
 
-          <div className="mt-10 flex justify-end">
-            <div
-              className="w-full lg:max-w-[41%] rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
-              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
-            >
-              <h3 className="text-2xl font-semibold">Why buy from Summit?</h3>
-              <div className="mt-6 grid gap-3 text-sm text-white/75">
-                {[
-                  "Quality used vehicles, professionally presented",
-                  "Appointment-only viewings in Holmfirth",
-                  "Straightforward, personal customer service",
-                  "Nationwide delivery available across the UK",
-                ].map((item) => (
-                  <div key={item} className="rounded-2xl bg-black/25 p-4">
-                    {item}
-                  </div>
-                ))}
-              </div>
+          <div
+            className="mt-10 rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+            style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+          >
+            <h3 className="text-2xl font-semibold">Why buy from Summit?</h3>
+            <div className="mt-6 grid gap-3 text-sm text-white/75 md:grid-cols-2 xl:grid-cols-4">
+              {[
+                "Quality used vehicles, professionally presented",
+                "Appointment-only viewings in Holmfirth",
+                "Straightforward, personal customer service",
+                "Nationwide delivery available across the UK",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl bg-black/25 p-4">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
         </section>
