@@ -537,7 +537,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 setBodyFilter("All body styles");
                 setPriceFilter("Any budget");
               }}
-              className="hover:text-white"
+              className="hover:text-[#99f2d1]"
             >
               Reset filters
             </button>
@@ -609,7 +609,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <input className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="Phone number" />
                 <textarea className="min-h-[160px] rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none placeholder:text-white/30 md:col-span-2" placeholder="How can we help?" />
               </div>
-              <button className="mt-5 rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:opacity-90">
+              <button
+                className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
+                style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
+              >
                 Send enquiry
               </button>
             </form>
