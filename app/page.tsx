@@ -443,10 +443,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
-                "Dedicated stock and sold stock pages",
-                "Fast vehicle search and filter controls",
-                "Clear contact, location, and opening times",
-                "Sell-your-car lead capture layout",
+                "Carefully selected premium stock",
+                "Appointment-only customer service",
+                "Straightforward buying experience",
+                "Nationwide delivery available",
               ].map((item) => (
                 <div key={item} className="rounded-[28px] border border-white/10 bg-black/25 p-6 text-sm leading-6 text-white/75">
                   {item}
