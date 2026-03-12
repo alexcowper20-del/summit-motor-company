@@ -2,13 +2,16 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
-import { CarFront, Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock3, Star, Menu, X, Search, ChevronRight } from "lucide-react";
 type ShellProps = {
   children: ReactNode;
   title?: string;
   eyebrow?: string;
   intro?: string;
 };
+
+const ACCENT = "#99f2d1";
+const ACCENT_SOFT = "rgba(153, 242, 209, 0.14)";
 export default function CarDealershipWebsite() {
   const [currentPage, setCurrentPage] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
