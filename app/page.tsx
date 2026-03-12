@@ -243,7 +243,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               </button>
               <button
                 onClick={() => setMobileOpen((v) => !v)}
-                className="rounded-full border border-white/10 p-2 lg:hidden"
+                className="rounded-full border border-white/10 p-2 transition hover:border-[#99f2d1] hover:text-[#99f2d1] lg:hidden"
               >
                 {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
               </button>
@@ -435,7 +435,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               </p>
               <button
                 onClick={() => goToPage("about")}
-                className="mt-8 rounded-full border px-6 py-3 text-sm font-semibold text-[#0b0b0b] transition hover:opacity-90"
+                className="mt-8 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
                 style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
               >
                 Read more
