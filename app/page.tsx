@@ -353,21 +353,21 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="relative overflow-hidden border-b border-white/10">
           <div className="absolute inset-0">
             <img
-              src="hero-car.jpg"
+              src="/hero-car.jpg"
               alt="Summit Motor Company"
-              className="h-full w-full object-cover opacity-50"
+              className="h-full w-full object-cover opacity-60"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/55 to-[#0b0b0b]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-[#0b0b0b]" />
           </div>
 
-          <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[1.35fr_0.9fr] lg:px-8 lg:py-28">
+          <div className="relative mx-auto flex max-w-7xl items-end px-5 py-24 lg:px-8 lg:py-32">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Used performance vehicles</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Premium used vehicles in Holmfirth</p>
               <h1 className="mt-4 max-w-4xl text-5xl font-semibold leading-[1.02] md:text-7xl">
-                Welcome to Summit
+                Summit Motor Company
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-                Carefully selected premium vehicles.
+                Carefully selected premium vehicles, professionally presented with a straightforward buying experience.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <button
@@ -383,10 +383,6 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                   Sell your vehicle
                 </button>
               </div>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
-              
             </div>
           </div>
         </section>
