@@ -373,7 +373,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 Summit Motor Company
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72 md:text-lg">
-                Carefully selected premium vehicles, professionally presented with a straightforward buying experience.
+                Quality used vehicles in Holmfirth, carefully selected and professionally presented with a straightforward, appointment-led buying experience.
               </p>
               <div className="mt-8 h-px w-24" style={{ backgroundColor: ACCENT }} />
             </div>
@@ -388,7 +388,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <p className="text-2xl font-semibold text-white">Carefully selected stock</p>
         <p className="mt-2 text-sm text-white/55">
-          Premium vehicles sourced and presented with quality in mind.
+          A hand-picked selection of quality used vehicles, prepared and presented to a high standard.
         </p>
       </div>
 
@@ -398,7 +398,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <p className="text-2xl font-semibold text-white">Straightforward service</p>
         <p className="mt-2 text-sm text-white/55">
-          An appointment-led experience with honest communication from first enquiry to handover.
+          A first-class, appointment-led service focused on honest communication and a smoother buying experience.
         </p>
       </div>
 
@@ -408,7 +408,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <p className="text-2xl font-semibold text-white">UK wide delivery</p>
         <p className="mt-2 text-sm text-white/55">
-          Nationwide delivery is available across the UK on every purchase.
+          Nationwide delivery is available across the UK, making it easy to buy from us wherever you are based.
         </p>
       </div>
     </div>
@@ -437,7 +437,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <p className="text-xs uppercase tracking-[0.35em] text-white/45">Why Summit</p>
               <h2 className="mt-3 text-3xl font-semibold md:text-4xl">A more personal approach to vehicle sales.</h2>
               <p className="mt-6 max-w-2xl text-base leading-7 text-white/72">
-                At Summit Motor Company, we focus on quality stock, clean presentation, and a straightforward buying experience. From first enquiry through to handover, our goal is to keep things simple, professional, and enjoyable.
+                At Summit Motor Company, we keep a variety of hand-picked vehicles in stock and focus on delivering a straightforward, professional experience from first enquiry through to handover.
               </p>
               <button
                 onClick={() => goToPage("about")}
@@ -473,23 +473,23 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="About"
-        title="A prestige dealership website designed around trust, stock quality, and a premium buying experience."
-        intro="Use this page to tell your story, explain your standards, and show buyers why they should choose your business over a faceless marketplace listing."
+        title="Quality used vehicles, professionally presented and backed by a more personal buying experience."
+        intro="At Summit Motor Company, our focus is simple: quality stock, honest communication, and a first-class service for every customer who visits us in Holmfirth or buys from us remotely."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-3">
             {[
               {
                 title: "Exacting standards",
-                text: "Every vehicle should be carefully chosen, professionally prepared, and presented with detailed photography, accurate descriptions, and transparent condition notes.",
+                text: "Every vehicle in stock is carefully chosen and professionally presented, with clear information and preparation standards that reflect the quality of the cars we sell.",
               },
               {
                 title: "A proper customer journey",
-                text: "From first enquiry to handover, the experience should feel organised, informed, and high touch — especially for higher-value vehicles.",
+                text: "From your first enquiry to final handover, we aim to keep the process organised, straightforward, and enjoyable, whether you are buying locally or from further afield.",
               },
               {
                 title: "Long-term trust",
-                text: "This layout leaves space for warranty info, finance support, aftersales, detailing, transport, and repeat-customer credibility.",
+                text: "We believe buying a used vehicle should feel clear and confidence-inspiring, with the right support, strong presentation, and service that encourages customers to come back again.",
               },
             ].map((item) => (
               <div
@@ -512,7 +512,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Stock list"
         title="Browse our current vehicle collection."
-        intro="This page includes the filter system you asked for, so customers can search stock quickly by keyword, make, body style, and budget."
+        intro="Browse our current stock of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
       >
         <section className="mx-auto max-w-7xl px-5 py-10 lg:px-8">
             <div
@@ -574,8 +574,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Sold stock"
-        title="A record of previously sold vehicles."
-        intro="Per your request, sold stock is displayed without prices. This keeps the page clean while still showing the level of stock your dealership moves."
+        title="A selection of vehicles we have previously sold."
+        intro="Our sold stock page gives you an idea of the type and quality of vehicles we regularly retail, while keeping the presentation clean and focused."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-3">
@@ -592,8 +592,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Contact us"
-        title="Speak to the team about sales, sourcing, buying, or part exchange."
-        intro="This page is set up for your phone numbers, sales email, buying email, WhatsApp, and a premium enquiry form."
+        title="Get in touch with Summit Motor Company."
+        intro="If you would like to enquire about a vehicle, discuss selling your car, or arrange an appointment, our team is here to help."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
@@ -649,8 +649,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Find us"
-        title="Visit the showroom, view vehicles in person, or arrange an appointment."
-        intro="This page combines map/location content with opening hours, making it easy for customers to know exactly where you are and when you are open."
+        title="Visit Summit Motor Company in Holmfirth."
+        intro="We are based at Unit 3 Victoria Business Park, Sheffield Road, Holmfirth, West Yorkshire, HD9 7TT. Viewings are available strictly by appointment only, seven days a week."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
@@ -706,8 +706,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Sell your vehicle"
-        title="Make it simple for owners to submit their car for purchase or sale-or-return."
-        intro="This page is styled to feel premium and trustworthy, with room for form fields, valuation messaging, and reasons to sell through your dealership."
+        title="Looking to sell your vehicle?"
+        intro="If you are thinking about selling your vehicle, get in touch with the details below. We are always interested in quality stock and aim to keep the process straightforward and professional."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
@@ -718,10 +718,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <h2 className="text-2xl font-semibold">Why sell through us?</h2>
               <div className="mt-6 grid gap-4">
                 {[
-                  "Fast response from the buying team",
-                  "Prestige and performance vehicle focus",
-                  "Straight purchase or sale-or-return options",
-                  "Nationwide vehicle collection available",
+                  "Fast response from our team",
+                  "We are always interested in quality used vehicles",
+                  "A simple, straightforward approach to vehicle buying",
+                  "Remote buying and collection options available",
                 ].map((item) => (
                   <div
   key={item}
@@ -764,8 +764,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Testimonials"
-        title="Customer feedback that builds trust before the first phone call."
-        intro="A dedicated reviews page is ideal for higher-value sales because buyers often want reassurance on communication, preparation standards, and overall professionalism."
+        title="What our customers say about us."
+        intro="We pride ourselves on offering quality used vehicles and a first-class service, and our customer feedback reflects the way we like to do business."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-2">
