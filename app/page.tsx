@@ -321,30 +321,31 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
   }
 
 
-function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {    return (
-      <article className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
-        <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-sm text-white/45">{car.year}</p>
-              <h3 className="mt-1 text-xl font-semibold leading-tight">{car.name}</h3>
-            </div>
-            {!hidePrice && <p className="text-lg font-semibold">{currency(car.price)}</p>}
+function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {
+  return (
+    <article className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
+      <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-sm text-white/45">{car.year}</p>
+            <h3 className="mt-1 text-xl font-semibold leading-tight">{car.name}</h3>
           </div>
-          <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-white/75">
-            <div className="rounded-2xl bg-black/30 p-3">{car.mileage.toLocaleString()} miles</div>
-            <div className="rounded-2xl bg-black/30 p-3">{car.fuel}</div>
-            <div className="rounded-2xl bg-black/30 p-3">{car.transmission}</div>
-            <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
-          </div>
-          <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 hover:text-white">
-            View details <ChevronRight className="h-4 w-4" />
-          </button>
+          {!hidePrice && <p className="text-lg font-semibold">{currency(car.price)}</p>}
         </div>
-      </article>
-    );
-  }
+        <div className="mt-5 grid grid-cols-2 gap-3 text-sm text-white/75">
+          <div className="rounded-2xl bg-black/30 p-3">{car.mileage.toLocaleString()} miles</div>
+          <div className="rounded-2xl bg-black/30 p-3">{car.fuel}</div>
+          <div className="rounded-2xl bg-black/30 p-3">{car.transmission}</div>
+          <div className="rounded-2xl bg-black/30 p-3">{car.body}</div>
+        </div>
+        <button className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white/85 hover:text-[#99f2d1]">
+          View details <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
+    </article>
+  );
+}
 
   if (currentPage === "home") {
     return (
