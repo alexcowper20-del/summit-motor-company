@@ -801,9 +801,9 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
   if (currentPage === "vehicle" && selectedVehicle) {
     return (
       <Shell
-        eyebrow="Vehicle details"
-        title={selectedVehicle.name}
-        intro={`Browse the full details for this ${selectedVehicle.year} ${selectedVehicle.make} including mileage, transmission, fuel type, and pricing.`}
+        eyebrow="Vehicle"
+        title={`${selectedVehicle.year} ${selectedVehicle.name}`}
+        intro={`Explore full details, pricing, and key specification for this ${selectedVehicle.make} currently offered by Summit Motor Company.`}
       >
         <section className="mx-auto max-w-7xl px-5 py-12 lg:px-8">
           <button
@@ -814,69 +814,134 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
             Back to {selectedVehicle.status === "sold" ? "sold stock" : "stock list"}
           </button>
 
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
+          <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
+            <div className="space-y-5">
               <div
-                className="overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.03]"
+                className="overflow-hidden rounded-[34px] border border-white/10 bg-white/[0.03]"
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
               >
-                <img src={selectedVehicle.image} alt={selectedVehicle.name} className="h-[420px] w-full object-cover" />
+                <img src={selectedVehicle.image} alt={selectedVehicle.name} className="h-[520px] w-full object-cover" />
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[selectedVehicle.image, selectedVehicle.image, selectedVehicle.image].map((image, index) => (
+                  <div
+                    key={index}
+                    className="overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.03]"
+                    style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+                  >
+                    <img src={image} alt={`${selectedVehicle.name} view ${index + 1}`} className="h-32 w-full object-cover" />
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">{selectedVehicle.make}</p>
-              <h2 className="mt-3 text-4xl font-semibold leading-tight">{selectedVehicle.name}</h2>
-              <p className="mt-4 text-3xl font-semibold text-white">
-                {selectedVehicle.status === "sold" || !selectedVehicle.price ? "Previously sold" : currency(selectedVehicle.price)}
-              </p>
-
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
-                  <div className="flex items-center gap-2 text-white/50"><Calendar className="h-4 w-4" /><span className="text-sm">Year</span></div>
-                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.year}</p>
-                </div>
-                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
-                  <div className="flex items-center gap-2 text-white/50"><Gauge className="h-4 w-4" /><span className="text-sm">Mileage</span></div>
-                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.mileage.toLocaleString()} miles</p>
-                </div>
-                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
-                  <div className="flex items-center gap-2 text-white/50"><Fuel className="h-4 w-4" /><span className="text-sm">Fuel</span></div>
-                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.fuel}</p>
-                </div>
-                <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-5" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
-                  <div className="flex items-center gap-2 text-white/50"><ChevronRight className="h-4 w-4" /><span className="text-sm">Transmission</span></div>
-                  <p className="mt-3 text-lg font-medium text-white">{selectedVehicle.transmission}</p>
-                </div>
-              </div>
-
-              <div className="mt-8 rounded-[28px] border border-white/10 bg-white/[0.03] p-6" style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}>
-                <h3 className="text-xl font-semibold">Vehicle overview</h3>
-                <p className="mt-4 text-base leading-7 text-white/70">
-                  This {selectedVehicle.year} {selectedVehicle.name} is presented in our current stock selection with key information including mileage, fuel type, transmission, and body style. For more information or to arrange a viewing, please get in touch with Summit Motor Company.
+            <div className="space-y-6">
+              <div
+                className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+                style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+              >
+                <p className="text-xs uppercase tracking-[0.35em] text-white/45">{selectedVehicle.make}</p>
+                <h2 className="mt-3 text-4xl font-semibold leading-tight">{selectedVehicle.name}</h2>
+                <p className="mt-4 text-3xl font-semibold text-white">
+                  {selectedVehicle.status === "sold" || !selectedVehicle.price ? "Previously sold" : currency(selectedVehicle.price)}
                 </p>
+
                 <div className="mt-6 grid gap-3 sm:grid-cols-2 text-sm text-white/75">
+                  <div className="rounded-2xl bg-black/25 p-4">Year: {selectedVehicle.year}</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Mileage: {selectedVehicle.mileage.toLocaleString()} miles</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Fuel: {selectedVehicle.fuel}</div>
+                  <div className="rounded-2xl bg-black/25 p-4">Transmission: {selectedVehicle.transmission}</div>
                   <div className="rounded-2xl bg-black/25 p-4">Body style: {selectedVehicle.body}</div>
-                  <div className="rounded-2xl bg-black/25 p-4">Make: {selectedVehicle.make}</div>
                   <div className="rounded-2xl bg-black/25 p-4">Status: {selectedVehicle.status === "sold" ? "Previously sold" : "Available now"}</div>
-                  <div className="rounded-2xl bg-black/25 p-4">Location: Holmfirth</div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <button
+                    onClick={() => goToPage("contact")}
+                    className="rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
+                    style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
+                  >
+                    Enquire now
+                  </button>
+                  <button
+                    onClick={() => goToPage("find")}
+                    className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-[#99f2d1] hover:text-[#99f2d1]"
+                  >
+                    Arrange viewing
+                  </button>
                 </div>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <button
-                  onClick={() => goToPage("contact")}
-                  className="rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
-                  style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
-                >
-                  Enquire now
-                </button>
-                <button
-                  onClick={() => goToPage("find")}
-                  className="rounded-full border border-white/15 px-4 py-2 text-sm font-medium text-white transition hover:border-[#99f2d1] hover:text-[#99f2d1]"
-                >
-                  Book a viewing
-                </button>
+              <div
+                className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+                style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+              >
+                <h3 className="text-xl font-semibold">Key details</h3>
+                <div className="mt-6 space-y-4 text-sm text-white/75">
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Registration year</span>
+                    <span className="font-medium text-white">{selectedVehicle.year}</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Make</span>
+                    <span className="font-medium text-white">{selectedVehicle.make}</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Model</span>
+                    <span className="font-medium text-white">{selectedVehicle.name}</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Mileage</span>
+                    <span className="font-medium text-white">{selectedVehicle.mileage.toLocaleString()} miles</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Fuel type</span>
+                    <span className="font-medium text-white">{selectedVehicle.fuel}</span>
+                  </div>
+                  <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                    <span className="text-white/50">Transmission</span>
+                    <span className="font-medium text-white">{selectedVehicle.transmission}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/50">Body style</span>
+                    <span className="font-medium text-white">{selectedVehicle.body}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+            <div
+              className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
+              <h3 className="text-2xl font-semibold">Vehicle description</h3>
+              <p className="mt-5 text-base leading-8 text-white/72">
+                This {selectedVehicle.year} {selectedVehicle.name} is part of our current vehicle collection at Summit Motor Company. It is presented with key information including mileage, transmission, fuel type, and body style, giving you a clear overview before arranging a viewing or making an enquiry.
+              </p>
+              <p className="mt-5 text-base leading-8 text-white/72">
+                If you would like to know more about this vehicle, request additional information, or arrange an appointment, please get in touch with our team and we will be happy to help.
+              </p>
+            </div>
+
+            <div
+              className="rounded-[34px] border border-white/10 bg-white/[0.03] p-7"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
+              <h3 className="text-2xl font-semibold">Why buy from Summit?</h3>
+              <div className="mt-6 grid gap-3 text-sm text-white/75">
+                {[
+                  "Quality used vehicles, professionally presented",
+                  "Appointment-only viewings in Holmfirth",
+                  "Straightforward, personal customer service",
+                  "Nationwide delivery available across the UK",
+                ].map((item) => (
+                  <div key={item} className="rounded-2xl bg-black/25 p-4">
+                    {item}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
