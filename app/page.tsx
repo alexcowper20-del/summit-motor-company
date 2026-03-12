@@ -638,7 +638,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8">
+            <div
+              className="rounded-[30px] border border-white/10 bg-white/[0.03] p-8"
+              style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+            >
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-5 w-5 text-white/65" />
                 <div>
