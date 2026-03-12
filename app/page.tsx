@@ -323,7 +323,10 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
 
 function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }) {
   return (
-    <article className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20">
+    <article
+      className="overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] shadow-2xl shadow-black/20"
+      style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
+    >
       <img src={car.image} alt={car.name} className="h-64 w-full object-cover" />
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
@@ -519,15 +522,15 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search make or model"
-                className="w-full rounded-2xl border border-white/10 bg-black/20 py-3 pl-11 pr-4 text-sm outline-none placeholder:text-white/30"
+                className="w-full rounded-2xl border border-white/10 bg-black/20 py-3 pl-11 pr-4 text-sm outline-none placeholder:text-white/30 focus:border-[#99f2d1]"
               />
             </div>
-            <select value={makeFilter} onChange={(e) => setMakeFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none">
+            <select value={makeFilter} onChange={(e) => setMakeFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none focus:border-[#99f2d1]">
               {makes.map((option) => (
                 <option key={option}>{option}</option>
               ))}
             </select>
-            <select value={bodyFilter} onChange={(e) => setBodyFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none">
+            <select value={bodyFilter} onChange={(e) => setBodyFilter(e.target.value)} className="rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm outline-none focus:border-[#99f2d1]">
               {bodyStyles.map((option) => (
                 <option key={option}>{option}</option>
               ))}
