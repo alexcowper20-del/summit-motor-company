@@ -481,15 +481,15 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
             {[
               {
                 title: "Quality stock",
-                text: "Every vehicle in stock is carefully chosen and professionally presented, with clear information and preparation standards that reflect the quality of the cars we sell.",
+                text: "Every vehicle in stock is carefully chosen and professionally presented, with clear information and preparation standards that reflect the quality we want the business to be known for.",
               },
               {
                 title: "Straightforward service",
-                text: "From your first enquiry to final handover, we aim to keep the process organised, straightforward, and enjoyable, whether you are buying locally or from further afield.",
+                text: "From your first enquiry to final handover, we aim to keep the process organised, straightforward, and enjoyable, whether you are buying locally or from elsewhere in the UK.",
               },
               {
                 title: "Built on trust",
-                text: "We believe buying a used vehicle should feel clear and confidence-inspiring, with the right support, strong presentation, and service that encourages customers to come back again.",
+                text: "We believe buying a used vehicle should feel clear and confidence-inspiring, with the right support, strong presentation, and service that gives customers a reason to come back again.",
               },
             ].map((item) => (
               <div
@@ -593,7 +593,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
       <Shell
         eyebrow="Contact us"
         title="Get in touch with Summit Motor Company."
-        intro="If you would like to enquire about a vehicle, discuss selling your car, or arrange an appointment, our team is here to help."
+        intro="If you would like to enquire about a vehicle, discuss selling your car, or arrange an appointment, our team will be happy to help."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-2">
@@ -612,9 +612,9 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 <div className="flex items-start gap-4">
                   <Mail className="mt-1 h-5 w-5 text-white/65" />
                   <div>
-                    <p className="text-sm text-white/45">Email us</p>
+                    <p className="text-sm text-white/45">Email</p>
                     <p className="mt-1 text-lg font-medium">{contactDetails.sales}</p>
-                    <p className="mt-4 text-sm text-white/45">Selling your vehicle</p>
+                    <p className="mt-4 text-sm text-white/45">Sell your vehicle</p>
                     <p className="mt-1 text-lg font-medium">{contactDetails.buying}</p>
                   </div>
                 </div>
@@ -718,10 +718,10 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <h2 className="text-2xl font-semibold">Why sell through Summit?</h2>
               <div className="mt-6 grid gap-4">
                 {[
-                  "Fast response from our team",
+                  "Fast response from our buying team",
                   "We are always interested in quality used vehicles",
                   "A simple, straightforward approach to vehicle buying",
-                  "Remote buying and collection options available",
+                  "Collection and remote purchase options available",
                 ].map((item) => (
                   <div
   key={item}
@@ -764,7 +764,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
     return (
       <Shell
         eyebrow="Customer reviews"
-        title="What our customers say about us."
+        title="What our customers say about Summit Motor Company."
         intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we like to do business."
       >
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8">
