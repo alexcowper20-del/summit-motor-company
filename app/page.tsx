@@ -307,7 +307,7 @@ function Shell({ children, title, eyebrow, intro }: ShellProps) {
               </div>
             </div>
             <div>
-              <h3 className="font-semibold text-white">Our showroom</h3>
+              <h3 className="font-semibold text-white">Visit Summit</h3>
               <div className="mt-4 space-y-1 leading-6">
                 {contactDetails.address.map((line) => (
                   <p key={line}>{line}</p>
@@ -417,8 +417,8 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
         <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-20">
           <div className="mb-8 flex items-end justify-between gap-6">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Current stock</p>
-              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Featured vehicles</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-white/45">Selected stock</p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Vehicles in stock</h2>
             </div>
             <button onClick={() => goToPage("stock")} className="hidden text-sm text-white/75 hover:text-[#99f2d1] md:block">
               Browse all stock
@@ -510,7 +510,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
   if (currentPage === "stock") {
     return (
       <Shell
-        eyebrow="Stock list"
+        eyebrow="Our stock"
         title="Browse our current stock of quality used vehicles."
         intro="Browse our current stock of quality used vehicles in Holmfirth and use the filters below to quickly narrow your search by make, body style, and budget."
       >
@@ -546,7 +546,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
           </div>
 
           <div className="mt-5 flex items-center justify-between text-sm text-white/55">
-            <p>{filteredInStock.length} vehicle(s) found</p>
+            <p>{filteredInStock.length} vehicles found</p>
             <button
               onClick={() => {
                 setSearch("");
@@ -573,7 +573,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
   if (currentPage === "sold") {
     return (
       <Shell
-        eyebrow="Sold stock"
+        eyebrow="Previously sold"
         title="A selection of vehicles we have previously sold."
         intro="Our sold stock page gives you an idea of the type and quality of vehicles we regularly retail, while keeping the presentation clean and focused."
       >
@@ -636,7 +636,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
                 style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
               >
-                Send enquiry
+                Submit enquiry
               </button>
             </form>
           </div>
@@ -661,7 +661,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-5 w-5 text-white/65" />
                 <div>
-                  <p className="text-sm text-white/45">Our address</p>
+                  <p className="text-sm text-white/45">Visit us</p>
                   <div className="mt-2 space-y-1 text-lg font-medium">
                     {contactDetails.address.map((line) => (
                       <p key={line}>{line}</p>
@@ -751,7 +751,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
                 className="mt-5 rounded-full border px-4 py-2 text-sm font-medium text-[#0b0b0b] transition hover:opacity-90"
                 style={{ backgroundColor: ACCENT, borderColor: ACCENT }}
               >
-                Request valuation
+                Request a valuation
               </button>
             </form>
           </div>
@@ -763,7 +763,7 @@ function StockCard({ car, hidePrice = false }: { car: any; hidePrice?: boolean }
   if (currentPage === "testimonials") {
     return (
       <Shell
-        eyebrow="Testimonials"
+        eyebrow="Customer reviews"
         title="What our customers say about us."
         intro="We pride ourselves on supplying quality used vehicles with a first-class, personal service, and our customer feedback reflects the way we do business."
       >
