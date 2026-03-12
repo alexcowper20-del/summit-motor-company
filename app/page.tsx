@@ -215,18 +215,6 @@ export default function CarDealershipWebsite() {
 function Shell({ children, title, eyebrow, intro }: ShellProps) {
   return (
       <div className="min-h-screen bg-[#0b0b0b] text-white">
-        <style jsx global>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: scale(1.01);
-            }
-            to {
-              opacity: 1;
-              transform: scale(1);
-            }
-          }
-        `}</style>
         <header className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0b0b]/95 backdrop-blur">
           <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-2 lg:px-8">
             <button onClick={() => goToPage("home")} className="text-left">
@@ -837,10 +825,9 @@ function StockCard({ car, hidePrice = false, onView }: { car: any; hidePrice?: b
                 style={{ boxShadow: `inset 0 0 0 1px ${ACCENT_SOFT}` }}
               >
                 <img
-                  key={selectedVehicleImageIndex}
                   src={vehicleImages[selectedVehicleImageIndex]}
                   alt={selectedVehicle.name}
-                  className="h-[520px] w-full object-cover animate-[fadeIn_0.35s_ease]"
+                  className="h-[520px] w-full object-cover"
                 />
               </div>
 
